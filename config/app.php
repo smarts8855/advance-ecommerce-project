@@ -181,10 +181,18 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Unicodeveloper\Paystack\PaystackServiceProvider::class,
+        
+        
+        
 
         /*
          * Package Service Providers...
          */
+        
+        Intervention\Image\ImageServiceProvider::class,
+        Meneses\LaravelMpdf\LaravelMpdfServiceProvider::class,
+        
 
         /*
          * Application Service Providers...
@@ -196,6 +204,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
+        
 
     ],
 
@@ -211,7 +220,16 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+
+        
+        'Image' => Intervention\Image\Facades\Image::class,
         // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Paystack' => Unicodeveloper\Paystack\Facades\Paystack::class,
+        'PDF' => Meneses\LaravelMpdf\Facades\LaravelMpdf::class,
+        
+        
+        
+        
     ])->toArray(),
 
 ];

@@ -34,5 +34,7 @@ class CreateNewUser implements CreatesNewUsers
             'phone' => $input['phone'],
             'password' => Hash::make($input['password']),
         ]);
+
+        return redirect()->route('dashboard');
     }
 }

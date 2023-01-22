@@ -103,13 +103,19 @@
 
 		  @php
 
-		  $admindata = DB::table('admins')->first();
+		  
+          $admindata = Auth::user();
+		  
 		  @endphp
 
 	      <!-- User Account-->
           <li class="dropdown user user-menu">	
 			<a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
-				<img src="{{ (!empty($admindata->profile_photo_path))? url('upload/admin_images/'.$admindata->profile_photo_path):url('upload/no_image.jpg') }}" alt="">
+				
+			<img src="{{ (!empty($admindata->profile_photo_path))? url('upload/admin_images/'.$admindata->profile_photo_path):url('upload/no_image.jpg') }}" width="100" height="100" alt="">
+
+			
+				
 			</a>
 			<ul class="dropdown-menu animated flipInX">
 			  <li class="user-body">
